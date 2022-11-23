@@ -7,6 +7,9 @@ inputs:
   GHA_Meta:
     required: false
     description: 'An optional additional metadata parameter. Will be available on the CircleCI pipeline as GHA_Meta'
+  GHA_Ref:
+    required: false
+    description: 'An optional additional ref parameter. Control what ref circleci runs a pipeline against'
 runs:
   using: 'node12'
   main: 'dist/index.js'
