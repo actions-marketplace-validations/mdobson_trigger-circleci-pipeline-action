@@ -23,14 +23,14 @@ const getBranch = () => {
   info(`Current ref to return: ${ref}`);
 
   info(`Potential ref override? => ${refOverride}`);
-  if (ref.startsWith("refs/heads/")) {
+  if (refOverride) {
+    info(`Ref override detected. Sending that to circle.`);
+    return refOverride;
+  } else if (ref.startsWith("refs/heads/")) {
     return ref.substring(11);
   } else if (ref.startsWith("refs/pull/") && headRef) {
     info(`This is a PR. Using head ref ${headRef} instead of ${ref}`);
     return headRef;
-  } else if (refOverride) {
-    info(`Ref override detected. Sending that to circle.`);
-    return refOverride;
   }
   return ref;
 };
