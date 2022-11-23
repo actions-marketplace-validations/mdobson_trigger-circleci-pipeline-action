@@ -12708,7 +12708,7 @@ const repoName = _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.repo;
 (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`Repo: ${repoName}`);
 const ref = _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.ref;
 const headRef = process.env.GITHUB_HEAD_REF;
-const refOverride = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)('GHA_Ref')
+const refOverride = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)("GHA_Ref");
 
 const getBranch = () => {
   if (ref.startsWith("refs/heads/")) {
@@ -12716,7 +12716,7 @@ const getBranch = () => {
   } else if (ref.startsWith("refs/pull/") && headRef) {
     (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`This is a PR. Using head ref ${headRef} instead of ${ref}`);
     return headRef;
-  } else if(refOverride) {
+  } else if (refOverride) {
     (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`Ref override detected. Sending that to circle.`);
     return refOverride;
   }

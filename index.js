@@ -16,7 +16,7 @@ info(`Org: ${repoOrg}`);
 info(`Repo: ${repoName}`);
 const ref = context.ref;
 const headRef = process.env.GITHUB_HEAD_REF;
-const refOverride = getInput('GHA_Ref')
+const refOverride = getInput("GHA_Ref");
 
 const getBranch = () => {
   if (ref.startsWith("refs/heads/")) {
@@ -24,7 +24,7 @@ const getBranch = () => {
   } else if (ref.startsWith("refs/pull/") && headRef) {
     info(`This is a PR. Using head ref ${headRef} instead of ${ref}`);
     return headRef;
-  } else if(refOverride) {
+  } else if (refOverride) {
     info(`Ref override detected. Sending that to circle.`);
     return refOverride;
   }
