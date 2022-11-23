@@ -12715,14 +12715,14 @@ const getBranch = () => {
   (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`Current ref to return: ${ref}`);
 
   (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`Potential ref override? => ${refOverride}`);
-  if (ref.startsWith("refs/heads/")) {
+  if (refOverride) {
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`Ref override detected. Sending that to circle.`);
+    return refOverride;
+  } else if (ref.startsWith("refs/heads/")) {
     return ref.substring(11);
   } else if (ref.startsWith("refs/pull/") && headRef) {
     (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`This is a PR. Using head ref ${headRef} instead of ${ref}`);
     return headRef;
-  } else if (refOverride) {
-    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`Ref override detected. Sending that to circle.`);
-    return refOverride;
   }
   return ref;
 };
