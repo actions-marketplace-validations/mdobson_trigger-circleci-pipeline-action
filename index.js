@@ -19,6 +19,10 @@ const headRef = process.env.GITHUB_HEAD_REF;
 const refOverride = getInput("GHA_Ref");
 
 const getBranch = () => {
+  info('Getting ref...');
+  info(`Current ref to return: ${ref}`);
+
+  info(`Potential ref override? => ${refOverride}`);
   if (ref.startsWith("refs/heads/")) {
     return ref.substring(11);
   } else if (ref.startsWith("refs/pull/") && headRef) {
