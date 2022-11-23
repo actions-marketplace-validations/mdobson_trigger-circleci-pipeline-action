@@ -19,7 +19,7 @@ const headRef = process.env.GITHUB_HEAD_REF;
 const refOverride = getInput("GHA_Ref");
 
 const getBranch = () => {
-  info('Getting ref...');
+  info("Getting ref...");
   info(`Current ref to return: ${ref}`);
 
   info(`Potential ref override? => ${refOverride}`);
