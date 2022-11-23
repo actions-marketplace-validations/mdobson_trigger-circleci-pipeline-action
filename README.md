@@ -1,4 +1,6 @@
-# Trigger CircleCI Pipeline
+# Trigger CircleCI Pipeline for a Custom Branch
+
+Author's Note: I am not actively developing this. If you're using it please file an issue or something for me to look at.
 
 Trigger your [CircleCI](https://circleci.com/) pipelines from any [event](https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows) on GitHub with [GitHub Actions](https://github.com/features/actions).
 
